@@ -1,6 +1,7 @@
 import streamlit as st
 from database import *
 import subprocess
+import webbrowser
 
 st.set_page_config(initial_sidebar_state="collapsed")
 
@@ -61,6 +62,8 @@ if submit:
 
             # Wait for Streamlit app to start
             process.stdout.readline()
+
+            webbrowser.open_new_tab('http://localhost:8501')
 
             # Wait for the Streamlit app to finish
             process.wait()
